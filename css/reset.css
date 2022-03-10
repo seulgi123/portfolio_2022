@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap');
+/* @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css'); */
+
+html {
+	font-size: 10px;
+}
+body {
+	/* font-family: 'Malgun Gothic', serif; */
+	font-family: 'Nanum Myeongjo', serif;
+	color: #333;
+	cursor: none;
+}
+.container {padding: 0 5%;}
+.container2 {padding: 0 8%;}
+html, body, div, span, h1, h2, h3, h4, h5, p, 
+address, em, img, strong, dl, dt, dd, ul, li, 
+fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, 
+footer, header, nav, section, summary,figcaption, figure {
+	margin: 0px;
+	padding: 0px;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+li {
+	list-style: none;
+}
+img, fieldset {
+	border: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+address, em {
+	font-style: normal;
+}
+caption {
+	position: absolute;
+	left: -9999px;
+}
+p {
+	color: #333333;
+}
+table {
+	border-collapse: collapse;
+}
+th {
+	font-weight: normal;
+}
+
+
+@media (max-width: 1024px) {
+	html {
+		font-size: 8px;
+	}
+	.container {padding: 0 2%;}
+
+}
+@media (max-width: 768px) {
+	html {
+		font-size: 7px;
+	}
+}

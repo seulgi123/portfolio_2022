@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<style>
+	p.on {color:red; font-size:18px;}
+</style>
+</head>
+<body>
+	<span>setInterval</span>
+	<div id="div">
+	  <p >1번째 P</p>
+	  <p>2번째 P</p>
+	  <p class="on">3번째 P</p>
+	  <p>4번째 P</p>
+	  
+	</div>
+
+	<span>setTimeout</span>
+	<div id="div2">
+	  <p>1번째 P</p>
+	  <p>2번째 P</p>
+	  <p class="on">3번째 P</p>
+	  <p>4번째 P</p>
+	  
+	</div>
+
+
+<script>
+	setInterval(ClassAppendSetInterval , 1000);
+    //setTimeout(ClassAppendSetTimeout,1000); 
+
+    function ClassAppendSetInterval(){
+        var ps = $("div#div p");
+        //var pLength = ps.length == 0 ? 0 : ps.length-1; 
+        var pLength = ps.length; //4 
+        var pOnIndex = $("div#div p.on").index();
+        
+        ps.eq(pOnIndex).removeClass("on");
+        
+        if(pLength <= pOnIndex){
+            pOnIndex = 0;
+        }else{
+            pOnIndex = pOnIndex+1;
+        }
+        ps.eq(pOnIndex).addClass("on");
+
+        console.log(pOnIndex); //01234
+    }
+
+    
+   
+    // setInterval(textEffect , 1000);
+
+    // function textEffect (){
+    //     var ps = $("div#div p");
+    //     var pOnIndex = $("div#div p.on").index();
+    //     ps.eq(pOnIndex).removeClass("on");
+    //     ps.eq(pOnIndex).next().addClass("on");
+    // }
+    
+
+
+
+	// function ClassAppendSetTimeout(){
+	// 	var $ps = $("div#div2 p");
+	// 	var $pLength = $ps.length == 0 ? 0 : $ps.length-1;
+	//   var $pOnIndex = $("div#div2 p.on").index();
+	  
+	//   $ps.eq($pOnIndex).removeClass("on");
+	  
+	//   if($pLength <= $pOnIndex){
+	// 	$pOnIndex = 0;
+	//   }else{
+	// 	$pOnIndex = $pOnIndex+1;
+	//   }
+	//   $ps.eq($pOnIndex).addClass("on");
+	//   setTimeout(ClassAppendSetTimeout,1000);
+	// }
+</script>
+</body>
+</html>

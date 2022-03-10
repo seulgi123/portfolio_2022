@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+
+    <title>LSG portfolio</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+</head>
+<body>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header id="header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="menu">
+                    <li class="mouseOver">About</li>
+                    <li class="mouseOver">Portfolio
+
+                        <ul class="subMenu">
+                            <li>beachedwhale</li>
+                            <li>gonggam</li>
+                            <li>saint21</li>
+                            <li>beatrice</li>
+                        </ul>
+                    </li>
+                    <li class="mouseOver">Contact</li>
+                </ul>
+                <div class="allMenu mouseOver">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+            </nav>
+           
+        </div>
+    </header>
+    
+    <section id="visual" class="fullpage">
+        <div class="">
+            <h2 class="visualTit visualTit1">
+                <span>I make</span>
+                <span>new something</span>
+            </h2> 
+
+            <h2 class="visualTit visualTit2">
+                <span>I make</span>
+                <span>anything</span>
+            </h2>
+        </div>
+        
+        <video class="vod" src="img/Pencil-8256.mp4" autoplay muted></video>
+
+        <div class="visualBg visualBg_b"></div>
+        <div class="visualBg visualBg_s"></div>
+
+        <div class="scroll">
+            <span>scroll</span>
+            <span class="arrow"></span>
+            <span class="arrow"></span>
+            <span class="arrow"></span>
+        </div>
+
+    </section>
+
+
+    <section id="project1" class="fullpage">
+        <div class="logoBg">
+            <h2><img src="img/proj1_logo.png" alt="로고"></h2>
+        </div>
+
+        <div class="projInfo">
+            <div class="content">
+                <h3>공감펜션<br>http://gonggamga.com</h3>
+                <p>
+                    공감펜션은 반응형 홈페이지로<br>
+                    제작기간이 약 3주정도 소요되었습니다.
+                </p>
+                <a class="mouseOver" href="http://gonggamga.com" target="_blank">view more</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="project1" class="fullpage">
+        <div class="projInfo">
+            <div class="content">
+                <h3>오션그레이트<br>http://gonggamga.com</h3>
+                <p>
+                    공감펜션은 반응형 홈페이지로<br>
+                    제작기간이 약 3주정도 소요되었습니다.
+                </p>
+                <a class="mouseOver" href="http://gonggamga.com">view more</a>
+            </div>
+        </div>
+
+        <div class="logoBg">
+            <h2><img src="img/proj1_logo.png" alt="로고"></h2>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        
+        
+
+ 
+
+
+
+        $(window).resize(function(){
+    width = $(window).width();
+    if (width > 768){
+
+        $(".fullpage").each(function (index) {
+        
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } else if (event.detail) delta = -event.detail / 3;
+                var moveTop = null;
+
+
+
+                if(index == 0){
+                    if (delta < 0) {
+                        if ($(this).next() != undefined) {
+                            moveTop = $(this).next().offset().top;
+                        }
+                    }	
+                } else {	
+                    if (delta < 0) {
+                        if ($(this).next() != undefined) {
+                            moveTop = $(this).next().offset().top;
+                        }	
+                    } else {
+                        if ($(this).prev() != undefined) {
+                            moveTop = $(this).prev().offset().top;
+                        }
+                    }
+                };
+
+                $("html,body").stop().animate({scrollTop: moveTop + 'px'},1000,"easeInOutQuart");
+            });
+        });
+
+    }
+
+
+   
+
+}).resize();
+
+       
+
+    </script>
+ 
+</body>
+</html>
